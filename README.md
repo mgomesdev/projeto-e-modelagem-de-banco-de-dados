@@ -5,7 +5,7 @@
 | Título  | Descrição    |
 | ------- | ------------ |
 | Status  | Em andamento |
-| Páginas | 1/300        |
+| Páginas | 13/300       |
 
 > Utilizei a linguagem [Mermaid](https://mermaid.js.org/syntax) para criação dos diagramas e exercicios do livro.
 
