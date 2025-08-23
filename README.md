@@ -7,6 +7,8 @@
 | Status  | Em andamento |
 | Páginas | 1/300        |
 
+> Utilizei a linguagem [Mermaid](https://mermaid.js.org/syntax) para criação dos diagramas e exercicios do livro.
+
 ### Capítulos
 
 -  [Cap. 1 - Introdução](https://github.com/mgomesdev/projeto-e-modelagem-de-banco-de-dados/tree/main/introducao)
