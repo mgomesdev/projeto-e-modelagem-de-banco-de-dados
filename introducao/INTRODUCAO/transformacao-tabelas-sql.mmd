@@ -7,12 +7,35 @@ config:
 
 erDiagram 
     direction LR
-    cliente
-    produto
-    vendedor
-    pedido
+    cliente {
+        integer num_cli
+        varchar nome_cli      
+    }
+    produto {
+        integer num_produto
+        varchar nome_prod
+        interger qtd_estoque
+    }
+    vendedor {
+        varchar nome_vendedor
+        varchar endereco
+        varchar dept
+        varchar nivel_cargo
+        integer dias_ferias
+    }
+    pedido {
+        integer num_pedido
+        varchar nome_vendedor
+        integer num_cli
+    }
+    pedido_produto {
+        integer num_pedido
+        integer num_produto
+    }
 
     cliente ||--o{ pedido : faz
     pedido }o--o{ produto : para
     cliente }o--|| vendedor : "atendido por"
     vendedor ||--o| pedido : preenche
+    pedido_produto }o--o{ pedido : "associa pedido a produto"
+    pedido_produto }o--o{ produto : "associa pedido a produto"
