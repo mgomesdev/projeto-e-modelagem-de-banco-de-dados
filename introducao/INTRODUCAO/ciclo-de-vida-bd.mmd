@@ -49,9 +49,8 @@ flowchart TB
     %% projeto físico %%
     normalizar --> selecionar-indices
     selecionar-indices --> requisitos-especiais-sim
-    selecionar-indices --> requisitos-especiais-nao
     requisitos-especiais-sim --> desnormalizar
-    requisitos-especiais-nao --> desnormalizar
+    requisitos-especiais-sim --> requisitos-especiais-nao
 
     %% implementacao %%
     requisitos-especiais-nao --> implementar
