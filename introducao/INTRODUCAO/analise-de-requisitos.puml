@@ -1,4 +1,5 @@
 @startuml Analise de requisitos
+left to right direction
 
 actor Analista
 usecase Produtos
@@ -7,6 +8,7 @@ usecase Vendedores
 usecase Pedidos
 
 note top of Analista : Etapa 1: Análise de requisitos (realidade)
+
 Analista --> Produtos
 Analista --> Clientes
 Analista --> Vendedores
