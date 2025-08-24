@@ -1,11 +1,16 @@
 ---
 config:
-    title: Modelagem de dados conceitual
-    theme: dark;
+    title: Modelagem de dados conceitual (Visão do vendedor de varejo)
+    theme: dark
     look: handDrawn
 ---
 
 erDiagram 
+    direction LR
     cliente
     produto
     vendedor
+
+    cliente }o--o{ produto : pedidos
+    cliente }o -- |{ vendedor : "atendido por"
+    produto }o--o{ vendedor : "vendido por"

@@ -1,0 +1,18 @@
+---
+config:
+    title: Integração da visão do (cliente)
+    theme: dark
+    look: handDrawn
+---
+
+erDiagram 
+    direction LR
+    cliente
+    produto
+    vendedor
+    pedido
+
+    cliente ||--o{ pedido : faz
+    pedido }o--o{ produto : para
+    cliente }o--|| vendedor : "atendido por"
+    vendedor ||--o| pedido : preenche

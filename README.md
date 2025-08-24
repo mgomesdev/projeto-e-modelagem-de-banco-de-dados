@@ -7,7 +7,7 @@
 | Status  | Em andamento |
 | Páginas | 13/300       |
 
-> Utilizei a linguagem [Mermaid](https://mermaid.js.org/syntax) para criação dos diagramas e exercicios do livro.
+> Utilizei a linguagem [Mermaid](https://mermaid.js.org/syntax) e [PlantUML](https://plantuml.com/) para criação dos diagramas e exercicios do livro.
 
 ### Capítulos
 
