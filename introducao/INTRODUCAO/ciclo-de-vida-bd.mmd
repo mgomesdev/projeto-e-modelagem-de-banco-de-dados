@@ -1,0 +1,57 @@
+---
+title: O ciclo de vida do banco de dados
+---
+flowchart TD
+    inicio@{shape: f-circ}
+    subgraph Requisitos de informação
+    determinar-requisitos@{shape: stadium, label: "Determinar requisitos"}
+    subgraph Projeto lógico
+    modelo@{shape: stadium, label: "Modelo"}
+    visao-unica@{shape: diamond, label: "visão unica"}
+    visoes-multiplas@{shape: diamond, label: "visôes multiplas"}
+    integrar-visoes@{shape: stadium, label: "Integrar visôes"}
+    transformar-tabelas-sql@{shape: stadium, label: "Transformar em tabelas SQL"}
+    normalizar@{shape: stadium, label: "Normalizar"}
+    subgraph Projeto físico
+    selecionar-indices@{shape: stadium, label: "Selecionar indices"}
+    requisitos-especiais-sim@{shape: diamond, label: "Requisitos especiais"}
+    requisitos-especiais-nao@{shape: diamond, label: "senão"}
+    desnormalizar@{shape: stadium, label: "Desnormalizar"}
+    subgraph Implementação
+    implementar@{shape: stadium, label: "Implementar"}
+    monitorar-requisitos@{shape: stadium, label: "Monitorar e detectar requisitos que mudam"}
+    requisitos-mudaram@{shape: braces, label: "senão"}
+    requisitos-nao-mudaram@{shape: diamond, label: "sem efeito"}
+    end    
+    end
+    end
+    end
+    fim@{shape: f-circ, label: "fim"}
+
+    %% requisitos de informação %%
+    inicio ---> determinar-requisitos
+    determinar-requisitos --> modelo
+
+    %% projeto lógico %%
+    modelo --> visao-unica
+    modelo --> visoes-multiplas
+    visao-unica --> integrar-visoes
+    visoes-multiplas --> integrar-visoes
+    integrar-visoes --> transformar-tabelas-sql
+    transformar-tabelas-sql --> normalizar
+
+    %% projeto físico %%
+    normalizar --> selecionar-indices
+    selecionar-indices --> requisitos-especiais-sim
+    selecionar-indices --> requisitos-especiais-nao
+    requisitos-especiais-sim --> desnormalizar
+    requisitos-especiais-nao --> desnormalizar
+
+    %% implementacao %%
+    requisitos-especiais-nao --> implementar
+    desnormalizar --> implementar
+    implementar --> monitorar-requisitos
+    monitorar-requisitos --> requisitos-nao-mudaram
+    monitorar-requisitos --> requisitos-mudaram
+    requisitos-mudaram --> inicio
+    requisitos-nao-mudaram --> fim
