@@ -1,10 +1,14 @@
 ---
-title: O ciclo de vida do banco de dados
+config:
+    theme: dark
+    look: handDrawn
+    title: O ciclo de vida do banco de dados
 ---
-flowchart TD
+flowchart TB
     inicio@{shape: f-circ}
     subgraph Requisitos de informação
     determinar-requisitos@{shape: stadium, label: "Determinar requisitos"}
+
     subgraph Projeto lógico
     modelo@{shape: stadium, label: "Modelo"}
     visao-unica@{shape: diamond, label: "visão unica"}
@@ -12,18 +16,20 @@ flowchart TD
     integrar-visoes@{shape: stadium, label: "Integrar visôes"}
     transformar-tabelas-sql@{shape: stadium, label: "Transformar em tabelas SQL"}
     normalizar@{shape: stadium, label: "Normalizar"}
+    end    
+    end
+
     subgraph Projeto físico
     selecionar-indices@{shape: stadium, label: "Selecionar indices"}
     requisitos-especiais-sim@{shape: diamond, label: "Requisitos especiais"}
     requisitos-especiais-nao@{shape: diamond, label: "senão"}
     desnormalizar@{shape: stadium, label: "Desnormalizar"}
+
     subgraph Implementação
     implementar@{shape: stadium, label: "Implementar"}
     monitorar-requisitos@{shape: stadium, label: "Monitorar e detectar requisitos que mudam"}
-    requisitos-mudaram@{shape: braces, label: "senão"}
+    requisitos-mudaram@{shape: diamond, label: "senão"}
     requisitos-nao-mudaram@{shape: diamond, label: "sem efeito"}
-    end    
-    end
     end
     end
     fim@{shape: f-circ, label: "fim"}
