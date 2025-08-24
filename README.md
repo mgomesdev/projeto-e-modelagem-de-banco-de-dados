@@ -11,7 +11,7 @@
 
 ### Capítulos
 
--  [Cap. 1 - Introdução](https://github.com/mgomesdev/projeto-e-modelagem-de-banco-de-dados/tree/main/introducao/introducao)
+-  [Cap. 1 - Introdução](https://github.com/mgomesdev/projeto-e-modelagem-de-banco-de-dados/tree/main/introducao/INTRODUCAO)
 -  Cap. 2 - O modelo entidade-relacionamento
 -  Cap. 3 - A UML (Unified modeling language)
 -  Cap. 4 - Análise de requisitos e modelagem de dados conceitual

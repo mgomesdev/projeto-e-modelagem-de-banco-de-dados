@@ -1,2 +1,2 @@
--  [Prefácio](/introducao/PREFACIO.md)
--  [Introdução](/introducao/INTRODUCAO.md)
+-  [Prefácio](/PREFACIO.md)
+-  [Introdução](/introducao)
