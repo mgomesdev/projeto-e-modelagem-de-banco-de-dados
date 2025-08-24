@@ -1,0 +1,24 @@
+---
+config:
+    title: Normalização de tabelas SQL
+    theme: dark
+    look: handDrawn
+---
+
+erDiagram 
+    direction LR
+
+    vendedor {
+        varchar nome_vendedor
+        varchar endereco
+        varchar dept
+        varchar nivel_cargo
+    }
+    vendedor_ferias {
+        varchar nivel_cargo
+        varchar dias_ferias
+    }
+
+vendedor }o--o{ vendedor_ferias : "associa vendedor com as férias"
+
+"Decomposição de tabelas e remoção de anomalias de atualização"

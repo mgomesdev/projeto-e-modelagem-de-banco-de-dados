@@ -1,6 +1,6 @@
 ---
 config:
-    title: Integração da visão do (cliente)
+    title: Transformação do modelo de dados conceitual em tabelas SQL
     theme: dark
     look: handDrawn
 ---
@@ -32,6 +32,9 @@ erDiagram
         integer num_pedido
         integer num_produto
     }
+
+    %% exemplo de SQL usada para criação das tabelas do banco de dados %%
+    "**Exemplo de código SQL** <br> create table cliente (num_cli integer, nome_cli varchar etc...)"
 
     cliente ||--o{ pedido : faz
     pedido }o--o{ produto : para
