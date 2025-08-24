@@ -1,0 +1,38 @@
+@startuml O ciclo de vida do banco de dados
+start
+
+partition "Requisitos de informação" {
+    :Determinar requisitos;    
+}
+
+partition "Projeto lógico" {
+    :Modelo;
+    if (visão única?) then (Sim)
+        :Integrar visões;
+    else (Não)
+        :visões múltiplas;
+        :Integrar visões;
+    endif
+    :Transformar em tabelas SQL;
+    :Normalizar;
+}
+
+partition "Projeto físico" {
+    :Selecionar índices;
+    if (Requisitos especiais?) then (Sim)
+        :Desnormalizar;
+        :Implementar;
+    else (Não)
+        :Implementar;
+    endif
+}
+
+partition "Implementação" {
+    :Monitorar e detectar requisitos que mudam;
+    if (Requisitos mudaram?) then (Sim)
+        --> start
+    else (Não)
+        stop
+    endif
+}
+@enduml
